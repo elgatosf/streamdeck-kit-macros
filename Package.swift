@@ -9,28 +9,28 @@ let package = Package(
     platforms: [.macOS(.v10_15), .iOS(.v13), .tvOS(.v13), .watchOS(.v6), .macCatalyst(.v13)],
     products: [
         .library(
-            name: "StreamDeckKitMacros",
-            targets: ["StreamDeckKitMacros"]
+            name: "StreamDeckView",
+            targets: ["StreamDeckView"]
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-syntax.git", from: "509.0.0"),
+        .package(url: "https://github.com/apple/swift-syntax.git", from: "509.0.0")
     ],
     targets: [
         .macro(
-            name: "StreamDeckView",
+            name: "StreamDeckKitMacros",
             dependencies: [
                 .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
                 .product(name: "SwiftCompilerPlugin", package: "swift-syntax")
             ]
         ),
-        .target(name: "StreamDeckKitMacros", dependencies: ["StreamDeckView"]),
+        .target(name: "StreamDeckView", dependencies: ["StreamDeckKitMacros"]),
         .testTarget(
             name: "StreamDeckKitMacrosTests",
             dependencies: [
-                "StreamDeckView",
-                .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
+                "StreamDeckKitMacros",
+                .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax")
             ]
-        ),
+        )
     ]
 )
