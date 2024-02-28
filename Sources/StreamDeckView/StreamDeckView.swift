@@ -72,4 +72,4 @@ public protocol StreamDeckView: View {
 /// ```
 @attached(extension, conformances: StreamDeckView)
 @attached(member, names: named(_$streamDeckViewContext), named(body), named(streamDeck), named(viewSize), named(viewIndex))
-public macro StreamDeckView() = #externalMacro(module: "StreamDeckView", type: "StreamDeckViewMacro")
+public macro StreamDeckView() = #externalMacro(module: "StreamDeckKitMacros", type: "StreamDeckViewMacro")
