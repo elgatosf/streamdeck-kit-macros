@@ -4,23 +4,10 @@ This package contains macros for the [Stream Deck Kit library](https://github.co
 
 ## Installation
 
-### Swift Package Manager 
+Use Swift Package Manager to install the dependency.
 
 ```swift
 dependencies: [
     .package(url: "https://github.com/elgatosf/streamdeck-kit-macros.git", upToNextMajor: "0.0.1")
 ]
-```
-
-### CocoaPods
-
-Example Podfile
-
-```Ruby
-platform :ios, '16.0'
-
-target 'YourAppTarget' do
-    use_frameworks!
-    pod 'StreamDeckKitMacros'
-end
 ```
